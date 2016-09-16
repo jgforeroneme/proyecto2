@@ -10,6 +10,10 @@ class Usuario_model extends Conexion{
     function userSigin($array) {
         return $this->db->insert('usuario',$array);
     }
+    function getDataModel($columnas,$tabla) {
+        return $this->db->selectAll($columnas,$tabla);
+    }
+    
 }
 ?>
 

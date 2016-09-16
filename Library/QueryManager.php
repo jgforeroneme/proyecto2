@@ -32,6 +32,17 @@ class QueryManager{
         $stmt="insert into ".$tabla."(".$columnas.") values (".$datos.")";
         $result=  $this->link->query($stmt) or die($this->link->error);
     }
+    
+    function selectAll($registros,$tabla) {
+        $query="select ".$registros." from ".$tabla.";";
+        $result=  $this->link->query($query);
+        if($result->num_rows > 0){
+            while($row=$result->fetch_assoc()){
+                $response[]=$row;
+            }
+            return $response;
+        }
+    }
 }
 ?>
 

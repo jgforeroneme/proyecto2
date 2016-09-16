@@ -1,4 +1,7 @@
-
+<div class="container">
+    <h2 class="tittlePpal">Bienvenidos a</h2>
+    <img src="<?php echo URL.VIEWS.DFT;?>img/logo_fondo.png">
+</div>
 
 <script>
     $(document).ready(function() {

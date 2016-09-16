@@ -67,8 +67,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                          <li class="dropdown hide">
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Usuarios<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Registrar Usuario</a></li>
-                                <li><a href="#">Consultar Usuarios</a></li>
+                                <li><a href="<?php echo URL; ?>Usuario/listarUsuarios">Consultar Usuarios</a></li>
                             </ul>
                         </li>
                         <li class="dropdown hide">

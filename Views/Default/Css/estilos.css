@@ -222,3 +222,27 @@ footer center{
 }
 
     
+/*principal**/
+
+.tittlePpal,.tittleUsu{
+    font-family: 'Comic Sans MS',Verdana, sans-serif;
+    font-size: 55px;
+    color:#34a9dc;
+}
+
+/**tabla usuarios***/
+.aro{
+    font-family: 'Comic Sans MS',Verdana, sans-serif;
+    font-size: 55px;
+    color:#34a9dc;
+}
+.table{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #FFF;
+   /*/ background-color: #64B5F6;*/
+   background-color: #BDBDBD;
+}
+.table tr:hover{
+    background-color: #BBDEFB;
+}

@@ -11,14 +11,14 @@
             if($userName !=""){
                 header("Location:".URL."Principal/principal");
             }else{
-                $this->view->render($this,'index');
+                $this->view->render($this,'index',"");
             }
             
               
         }
         public function sigin() {
            
-            $this->view->render($this,'sigin');
+            $this->view->render($this,'sigin',"");
         }
         
             public function index2($valor){

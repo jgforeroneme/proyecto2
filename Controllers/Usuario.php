@@ -35,6 +35,17 @@ class Usuario extends Controllers{
         Session::destroy();
         header("location:".URL);
     }
+    
+    function listarUsuarios(){
+        $userName=  Session::getSession("User");
+        if($userName!=""){
+           $response=  $this->model->getDataModel('*','usuario'); 
+           $this->view->render($this,'usuario',$response); 
+        }else{
+            header("Location:".URL); 
+        }
+        
+    }
 }
 ?>
 
