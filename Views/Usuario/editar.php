@@ -3,7 +3,7 @@
 	<div class="card card card-container">
 		<h2 class="titlelogin">Editar Usuario</h2>
         	<form class="form-signin" id="Registrar" name="Registrar" method="POST">
-                    <input type="text" name="doc" id="doc" class="form-control" placeholder="Documento" value="<?php echo $value["usuDocumento"]?>">
+                    <input type="text" name="doc" id="doc" class="form-control" placeholder="Documento" value="<?php echo $value["usuDocumento"]?>"  readonly="readonly">
                     <input type="text" name="user" id="user" class="form-control" placeholder="Usuario" value="<?php echo $value["usuNombre"]?>">
                     <input type="text" name="password" id="password" class="form-control" placeholder="Contraseña" value="<?php echo $value["usuClave"]?>">
                     <input type="text" name="perfil" id="perfil" class="form-control" placeholder="Perfil" value="<?php echo $value["usuPerfil"]?>">
@@ -17,6 +17,9 @@
     $(document).ready(function() {
         document.title = 'Editar Usuario | SalesCapture';
     }); 
+    $("li").removeClass("hide");
+$('li[name=login]').addClass("hide");
+$('li[name=sigin]').addClass("hide");
     $(function(){
     	$("#btnSigin").click(function(){
            	 var documento = $('form[name=Registrar] input[name=doc]' )[0].value;

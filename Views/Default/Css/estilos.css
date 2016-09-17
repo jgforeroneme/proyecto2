@@ -215,6 +215,7 @@ body, html {
     -moz-transition: all 0.218s;
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
+    color:#FFF;
 }
 
 .btn.btn-signin:hover,

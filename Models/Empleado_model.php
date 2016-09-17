@@ -1,5 +1,5 @@
 <?php
-class Usuario_model extends Conexion{
+class Empleado_model extends Conexion{
     function __construct() {
         parent::__construct();
     }
@@ -24,4 +24,6 @@ class Usuario_model extends Conexion{
     }
 }
 ?>
+
+
 

@@ -1,5 +1,5 @@
 <?php
-class Usuario extends Controllers{
+class Empleado extends Controllers{
     function __construct() {
         parent::__construct();
     }
@@ -28,13 +28,6 @@ class Usuario extends Controllers{
               echo 1;
           }      
       }
-    }
-    function createSession($user){
-        Session::setSession('User', $user);
-    }
-    function destroySession(){
-        Session::destroy();
-        header("location:".URL);
     }
     
     function listarUsuarios(){

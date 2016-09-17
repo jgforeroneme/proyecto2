@@ -53,6 +53,12 @@ class QueryManager{
         $result=  $this->link->query($query) or die($this->link->error.__LINE__);
         return true;
     }
+    function delete($tabla,$condicion){
+        $stmt='delete from '.$tabla.' where '.$condicion;
+        $result =  $this->link->query($stmt) or die($this->link->error.__LINE__);
+        return true;
+    }
+    
 }
 ?>
 

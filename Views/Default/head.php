@@ -74,7 +74,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Herramientas<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pedidos</a></li>
-                                <li><a href="<?php echo URL; ?>ABM_empleados/abm_empleados2">ABM Empleados</a></li>
+                                <li><a href="<?php echo URL; ?>Empleado/ingresar">ABM Empleados</a></li>
                                 <li><a href="#">Mantener Base de Datos</a></li>
                             </ul>
                         </li>
