@@ -13,7 +13,9 @@ class Usuario_model extends Conexion{
     function getDataModel($columnas,$tabla) {
         return $this->db->selectAll($columnas,$tabla);
     }
-    
+    function getDataModelId($columnas,$tabla) {
+        return $this->db->select($columnas,'usuario',$tabla);
+    }
 }
 ?>
 

@@ -2,7 +2,7 @@
 <div class="container">
     <h2 class="tittleUsu">Usuarios del sistema</h2>
     <table class="table ">
-        <tr>
+        <tr class="cabeceraTabla">
             <th>Documento</th>
             <th>Nombre de usuario</th>
             <th>Contraseña</th>
@@ -10,7 +10,7 @@
             <th>Opciones</th>
         </tr>
         <?php foreach ($array as $key => $value) {?>
-        <tr>
+        <tr class="cuerpoTabla">
             <td>
                 <?php echo $value["usuDocumento"]?>
             </td>

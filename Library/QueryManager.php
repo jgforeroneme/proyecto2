@@ -43,6 +43,16 @@ class QueryManager{
             return $response;
         }
     }
+    function update($tabla,$columnas,$condicion) {
+        $valores="";
+        foreach ($columnas as $key => $value) {
+            $valores.=$key.'="'.$value.'",';
+        }
+        $valores=  substr($valores,0,  strlen($valores)-1);
+        $query="update $tabla set $valores where $condicion";
+        $result=  $this->link->query($query) or die($this->link->error.__LINE__);
+        return true;
+    }
 }
 ?>
 

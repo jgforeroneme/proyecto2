@@ -46,6 +46,15 @@ class Usuario extends Controllers{
         }
         
     }
+    function editar($usuId) {
+        $userName= Session::getSession("User");
+        if($userName != ""){
+            $response=  $this->model->getDataModelId("*","id = '".$usuId."'");
+            $this->view->render($this,"editar",$response);
+        }else{
+            header("Location:".URL);
+        }
+    }
 }
 ?>
 
