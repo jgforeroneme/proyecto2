@@ -15,7 +15,8 @@ class Usuario extends Controllers{
         }
     }
     public function userSigin() {
-      if(isset($_POST["doc"]) && isset($_POST["user"]) && isset($_POST["password"]) && isset($_POST["perfil"])){  
+      if(isset($_POST["doc"]) && isset($_POST["user"]) && isset($_POST["password"])
+              && isset($_POST["perfil"])){  
           $response=  $this->model->userLogin('*',"usuNombre = '".$_POST["user"]."'");
           $response=$response[0];
           if($response==NULL){
@@ -54,6 +55,19 @@ class Usuario extends Controllers{
         }else{
             header("Location:".URL);
         }
+    }
+    
+    function editarDatos(){
+        if(isset($_POST["doc"]) && isset($_POST["user"]) && isset($_POST["password"])
+                && isset($_POST["perfil"])){ 
+            $usuId=$_POST["id"];
+            $array["usuDocumento"]=$_POST["doc"];
+            $array["usuNombre"]=$_POST["user"];
+            $array["usuClave"]=$_POST["password"];
+            $array["usuPerfil"]=$_POST["perfil"];
+            $this->model->editModel($array,"id='".$usuId."'");
+            echo 1;
+        }  
     }
 }
 ?>

@@ -16,6 +16,9 @@ class Usuario_model extends Conexion{
     function getDataModelId($columnas,$tabla) {
         return $this->db->select($columnas,'usuario',$tabla);
     }
+    function editModel($array,$condicion) {
+         return $this->db->update('usuario',$array,$condicion);
+    }
 }
 ?>
 
