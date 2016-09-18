@@ -39,7 +39,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                         <li class="dropdown hide">
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Ventas<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu" >
-                                <li><a href="#">Nueva</a></li>
+                                <li><a href="<?php echo URL; ?>Ventas/facturar">Nueva</a></li>
                                 <li><a href="#">Devolución</a></li>
                                 <li><a href="#">Reportes</a></li>
                             </ul>
@@ -74,7 +74,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Herramientas<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pedidos</a></li>
-                                <li><a href="<?php echo URL; ?>Empleado/ingresar">ABM Empleados</a></li>
+                                <li><a href="<?php echo URL; ?>Empleado/abmEmpleado">ABM Empleados</a></li>
                                 <li><a href="#">Mantener Base de Datos</a></li>
                             </ul>
                         </li>

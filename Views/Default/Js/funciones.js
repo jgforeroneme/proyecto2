@@ -70,3 +70,19 @@ $().ready(function(){
 	});
   $("#doc").focus();
 });
+function existeEmpleado(){
+     $('button[name=registrar]').hide();
+      $(".modal").fadeIn();
+                                  $(".cerrar").click(function(){
+                                      $(".modal").fadeOut(300);
+                                   });
+}
+function emptyEmpleado(){
+      $('label[name=titulo]').text("Registrar Empleado");
+      $('button[name=editar]').hide();
+      $('button[name=eliminar]').hide();
+      $(".modal").fadeIn();
+        $(".cerrar").click(function(){
+                                      $(".modal").fadeOut(300);
+                                   });
+}

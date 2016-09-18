@@ -3,43 +3,44 @@ class Empleado extends Controllers{
     function __construct() {
         parent::__construct();
     }
-    
-    public function userLogin() {
-        if(isset($_POST["user"]) && isset($_POST["password"])){
-            $response=  $this->model->userLogin('*',"usuNombre = '".$_POST["user"]."'");
-            $response=$response[0];
-            if($response["usuClave"]== $_POST["password"]){
-                $this->createSession($response["usuNombre"]);
-                echo 1;
+        public function abmEmpleado(){
+            error_reporting(E_ALL ^ E_NOTICE);
+            $userName=  Session::getSession("User");
+            if($userName !=""){
+                 $this->view->render($this,'empleado',"");
+            }else{
+                header("Location:".URL."Principal/principal");
+               
             }
         }
-    }
-    public function userSigin() {
-      if(isset($_POST["doc"]) && isset($_POST["user"]) && isset($_POST["password"])
-              && isset($_POST["perfil"])){  
-          $response=  $this->model->userLogin('*',"usuNombre = '".$_POST["user"]."'");
-          $response=$response[0];
-          if($response==NULL){
-              $array["usuDocumento"]=$_POST["doc"];
-              $array["usuNombre"]=$_POST["user"];
-              $array["usuClave"]=$_POST["password"];
-              $array["usuPerfil"]=$_POST["perfil"];
-              $this->model->userSigin($array);
-              echo 1;
-          }      
-      }
+    public function existe() {
+        if(isset($_POST["doc"])){
+            $response=  $this->model->empleadoExiste('*',"documento = '".$_POST["doc"]."'");
+            $response=$response[0];
+            if($response != NULL){
+                 echo 1;
+                
+            }
+            return $response;
+        }
     }
     
-    function listarUsuarios(){
-        $userName=  Session::getSession("User");
-        if($userName!=""){
-           $response=  $this->model->getDataModel('*','usuario'); 
-           $this->view->render($this,'usuario',$response); 
+
+       function editarEmpleado($usuId) {
+        $userName= Session::getSession("User");
+        if($userName != ""){
+            $response=  $this->model->getDataModelId("*","documento = '".$usuId."'");
+            $this->view->render($this,"editar",$response);
+           echo 1;
         }else{
-            header("Location:".URL); 
+            header("Location:".URL);
         }
-        
     }
+  
+    
+function empleadoReg(){
+     $this->view->render($this,"ingresar","");
+}
     function editar($usuId) {
         $userName= Session::getSession("User");
         if($userName != ""){

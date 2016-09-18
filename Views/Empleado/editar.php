@@ -1,7 +1,8 @@
+
 <script>
     $(document).ready(function() {
         document.title = 'ABM Empleados | SalesCapture';
-        emptyEmpleado();
+        existeEmpleado();
     });    
 $("li").removeClass("hide");
 $('li[name=login]').addClass("hide");
@@ -16,13 +17,14 @@ $('li[name=sigin]').addClass("hide");
 		</form>
 	</div>
 </div>
+
 <!-- Modal -->
 <div class="modal" data-backdrop="static">
     <div class="ventana">
         <div class="modal-content">
 	   <form  name="formulario" id="formulario" method="POST">
                <table border="0" width="100%" class="tblEmpModal">
-                  
+                <?php  if (is_array($array) || is_object($array)){ foreach ($array as  $value){ ?>    
                 <label class="tittleEmpModal" name="titulo">Editar/Eliminar Empleado</label> 
                 
                 <tr> <td><label class="lblEmpModal">Documento:</label></td>  <td> <input name="documento" id="documento" type="text"  value=" <?php echo $value["documento"]?>"> </td></tr>  
@@ -32,7 +34,7 @@ $('li[name=sigin]').addClass("hide");
                 <tr><td><label class="lblEmpModal">Telefono:</label></td><td><input name="telefono" id="telefono" type="text" value="<?php echo $value["empTelefono"]?>"</td></tr>
                 <tr><td><label class="lblEmpModal">Celular:</label></td><td><input name="celular" id="celular" type="text" value="<?php echo $value["empCelular"]?>"</td></tr>
                 <tr><td><label class="lblEmpModal">Email</label></td><td><input name="correo" id="correo" type="email" value="<?php echo $value["empCorreo"]?>"</td></tr>
-               
+              <?php }}?>  
             </table>
             <div id="botonera"> 
             <button id="btn_reg_emp" class="btn btn-primary" name="registrar">Registrar</button>
@@ -45,3 +47,30 @@ $('li[name=sigin]').addClass("hide");
         <span class="cerrar">x</span>
     </div>
 </div>
+<script>
+ $(function(){
+    	$("#btnBuscar").click(function(){
+            var documento = $('form[name=Registrar] input[name=doc]' )[0].value;
+               if(documento !=""){
+                    $.ajax({
+                        type:"POST",
+                        url:"<?php echo URL; ?>Empleado/existe",
+                         data:$("#Registrar").serialize(),
+                        success: function(response){
+
+                            if(response==1){
+                             document.location="<?php echo URL; ?>Empleado/editarEmpleado/"+documento;
+                                 
+                                  
+                            }else{
+                                document.location="<?php echo URL; ?>Empleado/empleadoReg";
+                                emptyEmpleado();
+                            }
+                        }
+                    });
+                    return false;
+             }
+    	});
+    });
+</script>-->
+

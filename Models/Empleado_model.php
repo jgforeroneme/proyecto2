@@ -4,8 +4,8 @@ class Empleado_model extends Conexion{
         parent::__construct();
     }
     
-    function userLogin($campos,$condicion) {
-        return $this->db->select($campos,'usuario',$condicion);
+    function empleadoExiste($campos,$condicion) {
+        return $this->db->select($campos,'empleado',$condicion);
     }
     function userSigin($array) {
         return $this->db->insert('usuario',$array);
@@ -14,7 +14,7 @@ class Empleado_model extends Conexion{
         return $this->db->selectAll($columnas,$tabla);
     }
     function getDataModelId($columnas,$tabla) {
-        return $this->db->select($columnas,'usuario',$tabla);
+        return $this->db->select($columnas,'empleado',$tabla);
     }
     function editModel($array,$condicion) {
          return $this->db->update('usuario',$array,$condicion);
@@ -22,6 +22,9 @@ class Empleado_model extends Conexion{
     function eliminarModel($condicion) {
          return $this->db->delete('usuario',$condicion);
     }
+    function getEmpleado($campos,$condicion){
+		return $this->db->select($campos, 'empleado',$condicion);
+	}
 }
 ?>
 

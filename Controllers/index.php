@@ -13,8 +13,6 @@
             }else{
                 $this->view->render($this,'index',"");
             }
-            
-              
         }
         public function sigin() {
            
