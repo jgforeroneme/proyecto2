@@ -343,15 +343,18 @@ footer center{
   background-color: #CFD8DC;
 text-align: center;  
 }
-.lblFecha, .lblVendedor{
-    margin-left: 500px;
+#facCabecera .titleFac{
+    padding: 0px;
+    margin-top: 2px;
 }
-#facDetalle{
-    
+#facCabecera label{
+    margin-left: 5px;
 }
+
 
 #btnBuscar{
     width: 20%;
+    
 }
 
 #bsProducto{

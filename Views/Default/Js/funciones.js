@@ -86,3 +86,13 @@ function emptyEmpleado(){
                                       $(".modal").fadeOut(300);
                                    });
 }
+
+function emptyCliente(){
+      $('label[name=titulo]').text("Registrar Cliente");
+      $('button[name=editar]').hide();
+      $('button[name=eliminar]').hide();
+      $(".modal").fadeIn();
+        $(".cerrar").click(function(){
+                                      $(".modal").fadeOut(300);
+                                   });
+}

@@ -59,6 +59,11 @@ class QueryManager{
         return true;
     }
     
+    function countRows($tabla){
+          $query="select count(*) from ".$tabla.";";
+           $result=  $this->link->query($query);
+           return $result;
+    }
 }
 ?>
 

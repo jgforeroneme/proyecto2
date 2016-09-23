@@ -7,6 +7,7 @@ class Ventas extends Controllers{
     function facturar(){
         $userName=  Session::getSession("User");
         if($userName!=""){
+            $response=$this->model->rowsCount();
            $this->view->render($this,'factura',""); 
         }else{
             header("Location:".URL); 
