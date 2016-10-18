@@ -255,6 +255,13 @@ footer center{
     color:#34a9dc;
 }
 
+.tittleEmp{
+    font-family: 'Comic Sans MS',Verdana, sans-serif;
+    font-size: 55px;
+    color:#34a9dc;
+    float: left;
+    
+}
 /**tabla usuarios***/
 
 .table{
@@ -352,16 +359,137 @@ text-align: center;
 }
 
 
-#btnBuscar{
+
+#btnAgregar{
     width: 20%;
     
 }
 
 #bsProducto{
     float: left;
-    width: 75%;
+    width: 55%;
+   
 }
 
 #tblFacDetalle{
     clear: both;
+}
+
+.nuevoEmpleado a{
+    margin-left: 350px;
+   border-radius: 15px;
+   width:180px;
+  
+}
+
+.nuevoEmpleado{
+    text-align: center;
+}
+
+#btnRegEmp, #btnRegProd{
+    padding-top: 5px;
+}
+
+
+#ventanaProducto2{
+   width: 1025px;
+   padding-right: 25px;
+ }
+
+#ventanaProducto{
+    width: 1350px;
+    background-color: #EEEEEE;
+}
+
+.cuerpoTabla td input{
+    width: 80px;
+}
+
+.cuerpoTabla #proDescripcion{
+    width: 180px;
+}
+
+#venProducto{
+   margin-top: -5px;
+   padding-top: -5px;
+   height: 620px;;
+   width: 400px;
+}
+
+#venProducto .titlelogin{
+   margin-top: -5px;
+   padding-top: -5px;
+  
+}
+
+#venProducto input{
+  height: 30px;
+  width: 50%;
+  
+}
+
+#venProducto label{
+   width: 50%;
+ float: left; 
+}
+
+#nuevoProducto .titlelogin{
+   margin-top: -5px;
+   padding-top: -5px; 
+}
+
+#nuevoProducto{
+   margin-top: -5px;
+   padding-top: -5px;
+   height: 620px;;
+   width: 400px;
+}
+
+#nuevoProducto input{
+  height: 28px;
+  
+  
+}
+#producto{
+    float: left;
+    width: 40%;
+}
+#datosDetalle{
+    margin-left: 350px;
+}
+#datosDetalle #codigo,#valUni{
+    float: left;
+   width: 65px;
+}
+#datosDetalle #descripcion{
+    float: left;
+    width: 150px;
+}
+#datosDetalle label{
+    float: left;
+   width:90px;
+}
+#datosDetalle #cantidad{
+    float: left;
+   width: 65px;
+}
+#tblFacDetalle{
+    clear: both;
+}
+.columna{
+    text-align: center;
+}
+
+tfoot tr td label{
+    width: 95%;
+    float: left;
+}
+
+#neto, #desc, #iva, #total{
+   
+    width: 95px;
+}
+
+#facContenedor{
+    height: 200px;
 }

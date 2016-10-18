@@ -19,6 +19,11 @@ class QueryManager{
         }
     }
     
+    function prepare($criterio) {
+        $query="SELECT * FROM producto WHERE prodNombre LIKE '%$criterio%' ORDER BY prodNombre ";
+        $result=  $this->link->query($query);
+       return $result;
+    }
     function insert($tabla,$campos){
         $columnas=NULL;
         $datos=NULL;
@@ -43,6 +48,18 @@ class QueryManager{
             return $response;
         }
     }
+    function selectLimit($registros,$tabla) {
+        $query="select ".$registros." from ".$tabla.";";
+        //$result=  $this->link->query($query);
+      if ($result = $this->link->query($query)) {
+
+    /* determinar el número de filas del resultado */
+    $row_cnt = $result->num_rows;
+
+   return $row_cnt;
+}
+    }
+    
     function update($tabla,$columnas,$condicion) {
         $valores="";
         foreach ($columnas as $key => $value) {

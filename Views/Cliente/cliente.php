@@ -49,7 +49,7 @@ $('li[name=sigin]').addClass("hide");
 <script>
     $(function(){
     	$("#btn_reg_cli").click(function(){
-            alert();
+          
            	 var documento = $('form[name=formulario] input[name=documento]' )[0].value;
         	 var nombre= $('form[name=formulario] input[name=nombres]' )[0].value;
                  var apellido= $('form[name=formulario] input[name=apellidos]' )[0].value;

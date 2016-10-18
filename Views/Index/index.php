@@ -25,7 +25,7 @@
                         url:"<?php echo URL; ?>Usuario/userLogin",
                         data:{user: user, password: password},
                         success: function(response){
-                            alert(response);
+                           
                             if(response==1){
                                 document.location="<?php echo URL; ?>Principal/principal";
                             }else{

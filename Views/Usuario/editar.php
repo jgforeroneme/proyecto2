@@ -33,7 +33,6 @@ $('li[name=sigin]').addClass("hide");
                         url:"<?php echo URL; ?>Usuario/editarDatos",
                          data:$("#Registrar").serialize(),
                         success: function(response){
-                            alert(response);
                             if(response==1){
                                 alert("usuario actualizado con exito");
                                 document.location="<?php echo URL; ?>Usuario/listarUsuarios";

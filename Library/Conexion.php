@@ -1,7 +1,7 @@
 <?php
 class Conexion extends Controllers{
     function __construct() {
-        $this->db=new QueryManager("localhost","root","root","salesCapture2");
+        $this->db=new QueryManager("localhost","root","root","salesCapture");
     }
 }
 ?>

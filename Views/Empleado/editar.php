@@ -1,70 +1,49 @@
-
-<script>
-    $(document).ready(function() {
-        document.title = 'ABM Empleados | SalesCapture';
-        existeEmpleado();
-    });    
-$("li").removeClass("hide");
-$('li[name=login]').addClass("hide");
-$('li[name=sigin]').addClass("hide");
-</script>
+<?php foreach ($array as $key => $value) {?>
 <div class="container">
 	<div class="card card card-container">
-		<h2 class="titlelogin">ABM Empleados</h2>
+		<h2 class="titlelogin">Editar Empleado</h2>
         	<form class="form-signin" id="Registrar" name="Registrar" method="POST">
-                    <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese documento del empleado" >
-		    <button type="submit" id="btnBuscar" class="btn btn-signin" data-toggle="modal" data-target="#myModal">Buscar</button>
+                    <input type="text" name="doc" id="doc" class="form-control"  value="<?php echo $value["documento"]?>"  readonly="readonly">
+                    <input type="text" name="nombre" id="nombre" class="form-control"  value="<?php echo $value["empNombre"]?>">
+                    <input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $value["empApellido"]?>">
+                    <input type="text" name="direccion" id="direccion" class="form-control"  value="<?php echo $value["empDireccion"]?>">
+                    <input type="text" name="telefono" id="telefonno" class="form-control"  value="<?php echo $value["empTelefono"]?>">
+                    <input type="text" name="celular" id="celular" class="form-control"  value="<?php echo $value["empCelular"]?>">
+                    <input type="text" name="correo" id="correo" class="form-control"  value="<?php echo $value["empCorreo"]?>">
+                    <button type="submit" id="btnSigin" class="btn btn-signin" >Actualizar</button>
 		</form>
 	</div>
 </div>
-
-<!-- Modal -->
-<div class="modal" data-backdrop="static">
-    <div class="ventana">
-        <div class="modal-content">
-	   <form  name="formulario" id="formulario" method="POST">
-               <table border="0" width="100%" class="tblEmpModal">
-                <?php  if (is_array($array) || is_object($array)){ foreach ($array as  $value){ ?>    
-                <label class="tittleEmpModal" name="titulo">Editar/Eliminar Empleado</label> 
-                
-                <tr> <td><label class="lblEmpModal">Documento:</label></td>  <td> <input name="documento" id="documento" type="text"  value=" <?php echo $value["documento"]?>"> </td></tr>  
-                <tr><td><label class="lblEmpModal">Nombres:</label></td><td><input  name="nombres" id="nombres" type="text" value="<?php echo $value["empNombre"]?>"</td></tr>
-                <tr><td><label class="lblEmpModal">Apellidos:</label> </td><td><input name="apellidos" id="apellidos" type="text" value="<?php echo $value["empApellido"]?>"</td></tr>
-                <tr><td><label class="lblEmpModal">Dirección:</label></td><td><input name="direccion" id="direccion" type="text" value="<?php echo $value["empDireccion"]?>"</td></tr>
-                <tr><td><label class="lblEmpModal">Telefono:</label></td><td><input name="telefono" id="telefono" type="text" value="<?php echo $value["empTelefono"]?>"</td></tr>
-                <tr><td><label class="lblEmpModal">Celular:</label></td><td><input name="celular" id="celular" type="text" value="<?php echo $value["empCelular"]?>"</td></tr>
-                <tr><td><label class="lblEmpModal">Email</label></td><td><input name="correo" id="correo" type="email" value="<?php echo $value["empCorreo"]?>"</td></tr>
-              <?php }}?>  
-            </table>
-            <div id="botonera"> 
-            <button id="btn_reg_emp" class="btn btn-primary" name="registrar">Registrar</button>
-            <button class="btn btn-primary " id="btn_edi_emp" name="editar">Editar</button>
-            <button class="btn btn-primary " id="btn_eli_emp" name="eliminar">Eliminar</button>
-            <button class="btn btn-primary hidden " id="btn_edi_emp" name="guardar">Guardar cambios</button>
-            </div>
-          </form>	
-	</div>
-        <span class="cerrar">x</span>
-    </div>
-</div>
+<?php } ?>
 <script>
- $(function(){
-    	$("#btnBuscar").click(function(){
-            var documento = $('form[name=Registrar] input[name=doc]' )[0].value;
-               if(documento !=""){
+    $(document).ready(function() {
+        document.title = 'Editar Empleado | SalesCapture';
+    }); 
+    $("li").removeClass("hide");
+$('li[name=login]').addClass("hide");
+$('li[name=sigin]').addClass("hide");
+    $(function(){
+    	$("#btnSigin").click(function(){
+           	 var documento = $('form[name=Registrar] input[name=doc]' )[0].value;
+        	 var nombre= $('form[name=Registrar] input[name=nombre]' )[0].value;
+                 var apellido= $('form[name=Registrar] input[name=apellido]' )[0].value;
+                 var direccion = $('form[name=Registrar] input[name=direccion]' )[0].value;
+                 var telefono= $('form[name=Registrar] input[name=telefono]' )[0].value;
+                 var celular = $('form[name=Registrar] input[name=celular]' )[0].value;
+                 var correo= $('form[name=Registrar] input[name=correo]' )[0].value;
+             if(documento !="" && nombre !="" && apellido !="" && direccion !="" && telefono !="" && celular !="" && correo !=""){
                     $.ajax({
                         type:"POST",
-                        url:"<?php echo URL; ?>Empleado/existe",
+                        url:"<?php echo URL; ?>Empleado/editarDatos",
                          data:$("#Registrar").serialize(),
                         success: function(response){
-
                             if(response==1){
-                             document.location="<?php echo URL; ?>Empleado/editarEmpleado/"+documento;
-                                 
-                                  
+                                alert("Empleado actualizado con exito");
+                                document.location="<?php echo URL; ?>Empleado/listarEmpleados";
                             }else{
-                                document.location="<?php echo URL; ?>Empleado/empleadoReg";
-                                emptyEmpleado();
+
+                                alert("Error: no se pudo actualizar al empleado");
+                                 document.location="<?php echo URL; ?>Empleado/listarEmpleados";
                             }
                         }
                     });
@@ -72,5 +51,7 @@ $('li[name=sigin]').addClass("hide");
              }
     	});
     });
-</script>-->
+</script>
+
+
 

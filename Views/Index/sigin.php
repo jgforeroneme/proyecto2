@@ -23,7 +23,7 @@
                         url:"<?php echo URL; ?>Usuario/userSigin",
                          data:$("#Registrar").serialize(),
                         success: function(response){
-                            alert(response);
+                           
                             if(response==1){
                                 alert("usuario registrado con exito");
                                 document.location="<?php echo URL; ?>";

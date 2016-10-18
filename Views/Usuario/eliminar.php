@@ -28,7 +28,7 @@ $('li[name=sigin]').addClass("hide");
                     url:"<?php echo URL; ?>Usuario/eliminarDatos",
                     data:$("#Registrar").serialize(),
                     success: function(response){
-                        alert(response);
+                       
                         if(response==1){
                             alert("usuario eliminado con exito");
                             document.location="<?php echo URL; ?>Usuario/listarUsuarios";

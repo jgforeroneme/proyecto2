@@ -5,7 +5,7 @@ class Views{
     }
     
     //metodo que ejecutara las vistas
-    function render($controller,$view,$array) {
+    function render($controller,$view,$entero,$array) {
        //obtenemos el nombre de la clase
         $controllers =  get_class($controller);
         require VIEWS.DFT.'head.php';

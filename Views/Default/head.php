@@ -6,8 +6,12 @@
         <link href="<?php echo URL.VIEWS.DFT;?>/Css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo URL.VIEWS.DFT;?>/Css/estilos.css" rel="stylesheet" type="text/css"/>
         <link  href="<?php echo URL.VIEWS.DFT; ?>Css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo URL.VIEWS.DFT;?>/Css/dataTable.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="<?php echo URL.VIEWS.DFT;?>Js/jquery-ui/jquery-ui.min.css" />
         <script src="<?php echo URL.VIEWS.DFT;?>Js/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="<?php echo URL.VIEWS.DFT;?>Js/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
         <script src="<?php echo URL.VIEWS.DFT;?>Js/bootstrap.min.js" type="text/javascript"></script>
+         <script src="<?php echo URL.VIEWS.DFT;?>Js/jquery.dataTables.min.js"></script>  
         <script src="<?php echo URL.VIEWS.DFT;?>Js/jquery.validate.js"></script>  
         <script src="<?php echo URL.VIEWS.DFT;?>Js/funciones.js"></script>  
     </head>
@@ -47,8 +51,8 @@ error_reporting(E_ALL ^ E_NOTICE);
                         <li class="dropdown hide" >
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Productos<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Ingresar Productos</a></li>
-                                <li><a href="#">Listar Productos</a></li>
+                                <li><a href="<?php echo URL; ?>Producto/ingresar">Ingresar Productos</a></li>
+                                <li><a href="<?php echo URL; ?>Producto/listarProductos">Listar Productos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown hide" >
@@ -74,7 +78,7 @@ error_reporting(E_ALL ^ E_NOTICE);
                             <a href="#" class="dropdown-toggle " id="btn_menu" data-toggle="dropdown">Herramientas<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Pedidos</a></li>
-                                <li><a href="<?php echo URL; ?>Empleado/abmEmpleado">ABM Empleados</a></li>
+                                <li><a href="<?php echo URL; ?>Empleado/listarEmpleados">ABM Empleados</a></li>
                                 <li><a href="#">Mantener Base de Datos</a></li>
                             </ul>
                         </li>

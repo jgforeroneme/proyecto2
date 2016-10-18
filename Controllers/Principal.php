@@ -7,7 +7,7 @@ class Principal extends Controllers{
     function principal(){
         $userName=  Session::getSession("User");
         if($userName!=""){
-           $this->view->render($this,'principal',""); 
+           $this->view->render($this,'principal',"",""); 
         }else{
             header("Location:".URL); 
         }
